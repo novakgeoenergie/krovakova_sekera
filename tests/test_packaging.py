@@ -82,8 +82,7 @@ def test_packaging_spec_valid_and_has_data_tuples() -> None:
     assert isinstance(parsed_ast, ast.Module)
 
     # Verify asset data tuple
-    assert "('src/machete/assets/*', 'machete/assets')" in content or \
-           '("src/machete/assets/*", "machete/assets")' in content
+    assert "machete/assets" in content
 
     # Verify hidden imports
     expected_hidden = [

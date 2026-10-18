@@ -39,6 +39,9 @@ def create_dmg(app_path: Path, output_dmg: Path, volname: str = "Křovákova Sek
             except OSError:
                 pass
 
+        if sys.platform == "darwin":
+            subprocess.run(["xattr", "-cr", str(staging_dir)], check=False)
+
         cmd = [
             "hdiutil",
             "create",
