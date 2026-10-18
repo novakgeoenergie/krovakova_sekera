@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "krovak-machete"
+version = "0.1.0"
+description = "Deterministic Adobe Premiere (.prproj) & Audition (.sesx) to Avid AAF/EDL translator"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pyaaf2>=1.7.0",
+    "pydantic>=2.6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+packaging = [
+    "pyinstaller>=6.5.0",
+]
+
+[project.scripts]
+machete = "machete.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q --tb=short"

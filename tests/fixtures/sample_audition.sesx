@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0" title="Audition_Mix" sampleRate="48000">
+  <name>Audition_Mix</name>
+  <sampleRate>48000</sampleRate>
+  <files>
+    <file id="1" relativePath="sample_tone.wav" mediaPath="sample_tone.wav" name="sample_tone.wav">
+      <sampleRate>48000</sampleRate>
+      <channels>1</channels>
+      <duration>288000</duration>
+    </file>
+  </files>
+  <tracks>
+    <audioTrack name="Dialogue_1" id="1" trackIndex="0">
+      <name>Dialogue_1</name>
+      <trackIndex>0</trackIndex>
+      <audioClip name="sample_tone.wav" startPoint="0" endPoint="96000" sourceInPoint="0" sourceOutPoint="96000" fileID="1" relativePath="sample_tone.wav">
+        <name>sample_tone.wav</name>
+        <startPoint>0</startPoint>
+        <endPoint>96000</endPoint>
+        <sourceInPoint>0</sourceInPoint>
+        <sourceOutPoint>96000</sourceOutPoint>
+        <source fileID="1" relativePath="sample_tone.wav"/>
+      </audioClip>
+      <audioClip name="sample_tone.wav" startPoint="144000" endPoint="240000" sourceInPoint="24000" sourceOutPoint="120000" fileID="1" relativePath="sample_tone.wav">
+        <name>sample_tone.wav</name>
+        <startPoint>144000</startPoint>
+        <endPoint>240000</endPoint>
+        <sourceInPoint>24000</sourceInPoint>
+        <sourceOutPoint>120000</sourceOutPoint>
+        <source fileID="1" relativePath="sample_tone.wav"/>
+        <envelope parameter="volume">
+          <keyframe sample="0" position="0" time="0" value="1.0"/>
+          <keyframe sample="48000" position="48000" time="1" value="0.5"/>
+        </envelope>
+        <volumeAutomation>
+          <keyframe sample="0" value="1.0"/>
+          <keyframe sample="48000" value="0.5"/>
+        </volumeAutomation>
+        <keyframes>
+          <keyframe sample="0" offset="0" time="0" value="1.0"/>
+          <keyframe sample="48000" offset="48000" time="1" value="0.5"/>
+        </keyframes>
+      </audioClip>
+    </audioTrack>
+  </tracks>
+</session>
