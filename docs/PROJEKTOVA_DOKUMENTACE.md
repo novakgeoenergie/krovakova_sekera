@@ -392,34 +392,7 @@ Stylové desktopové okno postavené na vestavěné knihovně `tkinter` (nevyža
 
 ---
 
-## 9. Metodika vývoje v Antigravity & Token Economy
-
-Projekt byl od začátku koncipován pro plně autonomní agentní vývoj v **Antigravity IDE**. Aby nedocházelo k plýtvání tokeny a zacyklení modelů, je vývoj rozdělen do 9 striktně izolovaných úkolů s přesně přidělenými modely podle jejich specializace:
-
-### 9.1 Matice alokace modelů
-
-| Úkol | Soubor zadání | Primární model | Záložní model | Účel a technologické zdůvodnění |
-| :--- | :--- | :--- | :--- | :--- |
-| **T01** | `T01_ir_and_math.md` | **Claude Opus 5.5** | — | **Kritický základ:** Definice `schema.py` a timecode matematiky s nulovým driftem. Vyžaduje maximální uvažovací schopnost. |
-| **T02** | `T02_fixture_factory.md` | **Gemini 3.8 Flash** | Gemini 4 Argon | Generátor syntetických XML a WAV souborů pro rychlé a levné testování. |
-| **T03** | `T03_prproj_indexer.md` | **Gemini 3.8 Flash** | Gemini 4 Argon | Rychlý GZIP čteč a indexace ID/UID ukazatelů v XML. |
-| **T04** | `T04_prproj_timeline.md` | **Gemini 4 Argon** | Claude Sonnet 5.5 | Komplexní průchod grafem Premiere, zplošťování vnořených sekvencí a L/J cuty. |
-| **T05** | `T05_sesx_parser.md` | **Gemini 3.8 Flash** | Gemini 4 Argon | Převod XML z Adobe Audition na kanonické schéma. |
-| **T06** | `T06_aaf_builder_core.md` | **Claude Sonnet 5.5** | Claude Opus 5.5 | Stavba binárního stromu AAF, Zero-Gap logika a práce s `pyaaf2`. |
-| **T07** | `T07_aaf_audio_automation.md` | **Claude Sonnet 5.5** | Claude Opus 5.5 | Zápis PCM audio esence, rozdělení sterea a automatizace křivek hlasitosti. |
-| **T08** | `T08_roundtrip_verifier.md` | **Gemini 4 Argon** | Claude Sonnet 5.5 | Kruhový inspektor, kontrola invariantů a generátor reportů pro střihače. |
-| **T09** | `T09_cli_and_gui.md` | **Gemini 3.8 Flash** | Gemini 4 Argon | CLI rozhraní, CMX 3600 EDL generátor a GUI „Křovákova Sekera“ s animovaným trpasličím progress monitorem. |
-
-### 9.2 Pravidla šetření kontextu (Rules of Engagement)
-* **Izolovaný kontext:** Každý task běží v novém sezení. Agentovi je předán pouze soubor `.antigravity/rules.md` a příslušný `T0X_*.md`.
-* **Povolené čtení (`Allowed Context`):** Agent smí číst pouze explicitně vyjmenované soubory.
-* **Zákaz dlouhých výpisů XML:** Do kontextu se nikdy nahrávají velké reálné projekty; testuje se výhradně na syntetických fixturách (<15 KB).
-* **Circuit Breaker (3-Strike Rule):** Pokud testy selžou 3× po sobě na stejné chybě, agent okamžitě zastaví práci, zapíše stav do `BLOCKERS.md` a čeká na přepnutí na silnější model.
-* **Stop-on-Green:** Jakmile testy pro daný task projdou, agent končí a negeneruje další vysvětlování.
-
----
-
-## 10. Příručka pro instalaci a spuštění
+## 9. Příručka pro instalaci a spuštění
 
 ### 10.1 Systémové požadavky
 * **Python:** 3.11 nebo novější

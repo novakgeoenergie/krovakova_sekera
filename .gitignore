@@ -38,5 +38,7 @@ htmlcov/
 # macOS system files
 .DS_Store
 
-# Temporary podklady drafts
+# Temporary podklady drafts and vibe coding blueprints
 podklady/
+.antigravity/
+build_machete_docs.py
